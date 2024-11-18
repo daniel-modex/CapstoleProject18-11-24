@@ -1,0 +1,101 @@
+body {
+    background: rgb(99, 39, 120)
+}
+
+/* Ensure radio buttons are inline */
+.col-md-12 input[type="radio"] {
+    display: inline-block;
+    margin-right: 10px; /* Space between the radio buttons */
+}
+
+/* Reduce the text size of radio button labels */
+.gender-label {
+    font-size: 14px; /* Adjust the font size as needed */
+    margin-right: 20px; /* Space between the label and the next radio button */
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: #BA68C8
+}
+
+.profile-button {
+    background: rgb(99, 39, 120);
+    box-shadow: none;
+    border: none
+}
+
+.profile-button:hover {
+    background: #682773
+}
+
+.profile-button:focus {
+    background: #682773;
+    box-shadow: none
+}
+
+.profile-button:active {
+    background: #682773;
+    box-shadow: none
+}
+
+.back:hover {
+    color: #682773;
+    cursor: pointer
+}
+
+.labels {
+    font-size: 11px
+}
+
+.add-experience:hover {
+    background: #BA68C8;
+    color: #fff;
+    cursor: pointer;
+    border: solid 1px #BA68C8
+}
+
+
+/* Make the DOB input smaller */
+.dob-input {
+    font-size: 14px;   /* Adjust the text size */
+    height: 30px;      /* Adjust the input height */
+}
+
+
+/* Ensure the checkbox is on the same line as other form elements */
+.checkbox-container {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.checkbox-container input[type="checkbox"] {
+  margin-right: 5px; /* Space between checkbox and label */
+}
+
+/* Adjusting form elements to keep everything inline and neat */
+.signup form input,
+.login form input,
+.signup form button,
+.login form button {
+  width: 100%; /* Make inputs take the full width */
+  margin-bottom: 10px; /* Space between elements */
+}
+
+/* Ensure the button at the bottom also fits */
+.signup form button,
+.login form button {
+  width: 100%; /* Full width button */
+  padding: 10px;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.signup form button:hover,
+.login form button:hover {
+  background-color: #45a049;
+}

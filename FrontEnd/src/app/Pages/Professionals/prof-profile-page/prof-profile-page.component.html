@@ -1,0 +1,99 @@
+<div class="container rounded bg-white mt-5 mb-5">
+        <div class="row">
+            <div class="col-md-3 border-right">
+                <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+                    <img class="rounded-circle mt-5" width="150px"
+                        src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
+                    <span class="font-weight-bold">{{providerObj.name}}</span>
+                    <span class="text-black-50">{{providerObj.userName}}</span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="col-md-5 border-right">
+                <div class="p-3 py-5">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h4 class="text-right">Edit Profile</h4>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-6">
+                            <label class="labels">Name</label>
+                            <input [(ngModel)]="providerObj.name" type="text" class="form-control" placeholder="" value="">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="labels">User Name</label>
+                            <input disabled="true" [(ngModel)]="providerObj.userName" type="text" class="form-control" placeholder="surname" value="">
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12">
+                            <label class="labels">Mobile Number</label>
+                            <input disabled="true" [(ngModel)]="providerObj.phone" type="text" class="form-control"
+                                placeholder="enter phone number" value="">
+                        </div>
+                        <div class="col-md-12">
+                            <label class="labels">Address</label>
+                            <input [(ngModel)]="providerObj.address" type="text" class="form-control" placeholder="enter address line 1" value="">
+                        </div>
+                        <div class="col-md-12">
+                            <label class="labels">City</label>
+                            <input [(ngModel)]="providerObj.city" type="text" class="form-control" placeholder="enter address line 2" value="">
+                        </div>
+                        <div class="col-md-12">
+                            <label class="labels">Email ID</label>
+                            <input disabled="true" [(ngModel)]="providerObj.email" type="text" class="form-control"
+                                placeholder="enter email id" value="">
+                        </div>
+                        <div class="col-md-12">
+                            <label class="labels">Gender</label>
+                            <div class="d-flex">
+                                <div class="form-check me-2">
+                                    <input class="form-check-input" [(ngModel)]="providerObj.gender" type="radio" value="Male" id="genderMale">
+                                    <label class="form-check-label text-small" for="genderMale" style="font-size: 12px;">Male</label>
+                                </div>
+                                <div class="form-check me-2">
+                                    <input class="form-check-input" [(ngModel)]="providerObj.gender" type="radio" value="Female" id="genderFemale">
+                                    <label class="form-check-label text-small" for="genderFemale" style="font-size: 12px;">Female</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" [(ngModel)]="providerObj.gender" type="radio" value="Other" id="genderOther">
+                                    <label class="form-check-label text-small" for="genderOther" style="font-size: 12px;">Other</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <label class="labels">Date of Birth</label>
+                            <input [(ngModel)]="providerObj.dob" type="date" class="form-control" placeholder="Select DOB" value="">
+                        </div>
+                    </div>
+                    <div class="mt-5 text-center">
+                        <button class="btn btn-primary profile-button" type="button" (click)="onSubmit()">Save Profile</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-3 py-5">
+                    <div class="d-flex justify-content-between align-items-center experience">
+                        <span>Upload Documents</span>
+                        <span class="border px-3 p-1 add-experience">
+                            <i class="fa fa-plus"></i>&nbsp;Experience
+                        </span>
+                    </div>
+                    <br>
+                    <div class="col-md-12">
+                        <label class="labels">Field Of Expertise</label>
+                        <select [(ngModel)]="providerObj.domain" class="form-control">
+                            <option value="Tutor">Tutor</option>
+                            <option value="Plumber">Plumber</option>
+                            <option value="Electrician">Electrician</option>
+                        </select>
+                    </div>
+                    <br>
+                    <div class="col-md-12">
+                        <label class="labels">Payment For Service</label>
+                        <input [(ngModel)]="providerObj.basePay" type="number" class="form-control" placeholder="additional details" value="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    

@@ -1,0 +1,104 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <!-- Logo and Brand Name -->
+    <a class="navbar-brand" href="#">
+      <h3 style="font-family: 'Times New Roman', Times, serif;">QuickAccess</h3>
+    </a>
+
+    <!-- Toggler for Mobile -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar Links -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/user">Home</a>
+        </li>
+
+        
+        <!-- Services Dropdown in Navbar -->
+        <li ngbDropdown class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" ngbDropdownToggle aria-expanded="false">
+            Services
+          </a>
+          <ul ngbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" routerLink="/plumber">Plumber</a></li>
+            <li><a class="dropdown-item" routerLink="/tutor">Tutor</a></li>
+            <li><a class="dropdown-item" routerLink="/electrician">Electrician</a></li>
+            
+          </ul>
+        </li>
+
+        <li ngbDropdown class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdownProfile" ngbDropdownToggle aria-expanded="false">
+            {{ProfileName}}
+          </a>
+          <ul ngbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdownProfile">
+            <li><a class="dropdown-item" routerLink="/profile">Your Account</a></li>
+            <li><a class="dropdown-item"  routerLink="/status">Booking Status</a></li>
+            <li><a class="dropdown-item" (click)="onLogOut()" href="#">Logout</a></li>
+          </ul>
+        </li>
+<!-- icon -->
+        <li class="nav-item">
+          
+          <a class="nav-link" >
+          <i class="fas fa-user-circle"></i>
+          </a>
+        </li>
+        
+        <!-- <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="admin">Admin</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="register">Register</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="professionals">Professionals</a>
+        </li> -->
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+
+
+
+
+<div class="container mt-4">
+  <div class="row">
+      <!-- Loop through the services array to create cards dynamically -->
+
+      @for (item of data; track $index) {
+      <div class="col-md-6 mb-4 custom1">
+          <div class="card h-100">
+              <img src="plumber img_2.jpg" class="card-img-top" alt="" />
+              <div class="card-body">
+                  <h5 class="card-title">Name: {{item.name}}</h5>
+                  <div class="custom-container">
+                    <p class="card-text">Price: {{item.basePay}} <br>Rating: {{item.rating}}</p>
+                  <!-- Button with hover effect -->
+                  <button 
+                  type="button" 
+                  routerLink="/status" 
+                  class="btn btn-primary btn-block book-now-btn custom-btn" 
+                  (click)="Book()">
+                  Book
+                </button>
+                </div>
+              </div>
+          </div>
+      </div>
+      }
+
+
+
+
+<router-outlet/>

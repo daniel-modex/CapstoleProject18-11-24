@@ -1,0 +1,521 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <!-- Logo and Brand Name -->
+    <a class="navbar-brand" href="#">
+      <h3 style="font-family: 'Times New Roman', Times, serif;">QuickAccess</h3>
+    </a>
+
+    <!-- Toggler for Mobile -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar Links -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/user">Home</a>
+        </li>
+
+        
+        <!-- Services Dropdown in Navbar -->
+        <li ngbDropdown class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" ngbDropdownToggle aria-expanded="false">
+            Services
+          </a>
+          <ul ngbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" routerLink="/plumber">Plumber</a></li>
+            <li><a class="dropdown-item" routerLink="/tutor">Tutor</a></li>
+            <li><a class="dropdown-item" routerLink="/electrician">Electrician</a></li>
+            
+          </ul>
+        </li>
+
+        <li ngbDropdown class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle"   id="navbarDropdownProfile" ngbDropdownToggle aria-expanded="false">
+            {{ProfileName}}
+          </a>
+          <ul ngbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdownProfile">
+            <li><a class="dropdown-item" routerLink="/profile">Your Account</a></li>
+            <li><a class="dropdown-item"  routerLink="/status">Booking Status</a></li>
+            <li><a class="dropdown-item" (click)="onLogOut()" href="#">Logout</a></li>
+          </ul>
+        </li>
+<!-- icon -->
+        <li class="nav-item">
+          
+          <a class="nav-link" >
+          <i class="fas fa-user-circle"></i>
+          </a>
+        </li>
+        
+        <!-- <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="admin">Admin</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="register">Register</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="professionals">Professionals</a>
+        </li> -->
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Font Awesome CDN (Only once) -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+
+<!-- Section: Quote & Images -->
+<section class="quote-section py-5">
+  <div class="container d-flex justify-content-between align-items-center">
+    <div class="quote-text" style="max-width: 50%;">
+      <h2>"Empowering Your Business, One Service at a Time."</h2>
+      <p>We provide reliable and high-quality services to help your business grow. From strategy to execution, we've got
+        you covered.</p>
+    </div>
+    <div class="image-container d-flex flex-wrap justify-content-between" style="max-width: 45%;">
+      <!-- First row of images -->
+      <div class="image-item" style="width: 48%; margin-bottom: 20px;">
+        <img src="electrician img_2.jpg" alt="Electrician Image" class="img-fluid w-100" style="border-radius: 8px;">
+      </div>
+      <div class="image-item" style="width: 48%; margin-bottom: 20px;">
+        <img src="electrician img_1.jpg" alt="Plumber Image" class="img-fluid w-100" style="border-radius: 8px;">
+      </div>
+      <!-- Second row of images -->
+      <div class="image-item" style="width: 48%; margin-bottom: 20px;">
+        <img src="tutor img_2.jpg" alt="Electrician Image" class="img-fluid w-100" style="border-radius: 8px;">
+      </div>
+      <div class="image-item" style="width: 48%; margin-bottom: 20px;">
+        <img src="plumber img_2.jpg" alt="Plumber Image" class="img-fluid w-100" style="border-radius: 8px;">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Section: Background & Top Services Cards -->
+<section class="services-section py-5" style="background: #f8f9fa;">
+  <div class="container">
+    <h2 class="text-center mb-4">Our Top Services</h2>
+    <div class="row">
+      <!-- Card 1: Tutor Service -->
+      <div class="col-md-4">
+        <div class="card d-flex h-100 box">
+          <img src="tutor img_1.jpg" class="card-img-top" alt="Personalized Tutoring">
+          <div class="card-body content">
+            <h5 class="card-title">Ace Academy</h5>
+            <p class="card-text">Get one-on-one tutoring sessions with expert tutors in various subjects. Tailored
+              lessons to fit your learning style and pace.</p>
+            <a routerLink="/tutor" class="btn btn-primary float-end">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: Electrical Services -->
+      <div class="col-md-4">
+        <div class="card d-flex h-100 box">
+          <img src="electrician img__3.jpg" class="card-img-top" alt="Electrical Repairs & Installations">
+          <div class="card-body content">
+            <h5 class="card-title">Volt Master</h5>
+            <p class="card-text">Need electrical repairs or installation? Our certified electricians provide reliable
+              and safe electrical services for homes and businesses.</p>
+            <a routerLink="/electrician" class="btn btn-primary float-end">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: Plumbing Services -->
+      <div class="col-md-4">
+        <div class="card d-flex h-100 box">
+          <img src="plumber img_1.jpg" class="card-img-top" alt="Plumbing Solutions">
+          <div class="card-body content">
+            <h5 class="card-title">Fixture Fit</h5>
+            <p class="card-text">From leaky faucets to full plumbing installations, our skilled plumbers provide
+              top-notch services to solve your water-related problems.</p>
+            <a routerLink="/plumber" class="btn btn-primary float-end">Book Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<h2 class="text-center mb-5">Personalized Tutoring to Unlock Your Full Potential</h2>
+
+<!-- Section: Quote & Image (Tutoring) -->
+<section class="quote-section py-5">
+  <div class="container d-flex justify-content-between align-items-center">
+    <!-- Hoverable Container (Text + Image) -->
+    <div class="quote-container d-flex align-items-center w-100">
+      <!-- Text Section (Tutoring Description) -->
+      <div class="quote-text" style="max-width: 50%;">
+        <h2>"Expert Tutoring, Unlocking Your Potential."</h2>
+        <p>At Knowledge Boost, we offer personalized tutoring for students of all levels. Whether you're preparing for
+          exams or seeking to improve specific skills, our experienced tutors are here to guide you every step of the
+          way.</p>
+      </div>
+      <!-- Image Section (Tutoring) -->
+      <div class="image-container" style="max-width: 45%;">
+        <img src="tutor img_5.png" alt="Tutoring Image" class="img-fluid w-100" style="border-radius: 8px;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- tutor top 5 subcategory -->
+<div class="card3-deck custom-card3">
+  <br>
+  <div class="card3">
+    <h4> Maths Tutor</h4>
+    <p class="heading custom-text" style=" background-clip: text;">
+      QuickAccess 
+    </p>
+    <a class="custom-icon" routerLink="/tutor" target="_blank">
+      <img src="icons8-arrow-20.png" alt="Arrow" class="icon-link">
+    </a>
+    
+  </div>
+  <br>
+  <div class="card3">
+    <h4>Biology Tutor</h4>
+    <p class="heading custom-text" style=" background-clip: text;">
+      QuickAccess
+    </p>
+    <a class="custom-icon" routerLink="/tutor" target="_blank">
+      <img src="icons8-arrow-20.png" alt="Arrow" class="icon-link">
+    </a>
+  </div><br>
+  <div class="card3">
+    <h4>Physics Tutor</h4>
+    <p class="heading custom-text" style=" background-clip: text;">
+      QuickAccess
+    </p>
+    <a class="custom-icon" routerLink="/tutor" target="_blank">
+      <img src="icons8-arrow-20.png" alt="Arrow" class="icon-link">
+    </a>
+  </div><br>
+  <div class="card3">
+    <h4>Social Tutor</h4>
+    <p class="heading custom-text" style=" background-clip: text;">
+      QuickAccess
+    </p>
+    <a class="custom-icon" routerLink="/tutor" target="_blank">
+      <img src="icons8-arrow-20.png" alt="Arrow" class="icon-link">
+    </a>
+  </div><br>
+  <div class="card3">
+    <h4>CS Tutor</h4>
+    <p class="heading custom-text" style=" background-clip: text;">
+      QuickAccess
+    </p>
+    <a class="custom-icon" routerLink="/tutor" target="_blank">
+      <img src="icons8-arrow-20.png" alt="Arrow" class="icon-link">
+    </a>
+  </div>
+
+</div>
+<!-- tutor top 5 subcategory -->
+<!-- <section class="subjects-section py-5" style="background-color: #f8f9fa;">
+  <div class="container">
+    <div class="row justify-content-center">
+
+      <div class="col-md-2 col-sm-4 mb-4">
+        <div class="card tutor-card">
+          <img src="maths tutor img.jpg" class="card-img-top" alt="Maths Tutor">
+          <div class="card-body text-center">
+            <h5 class="card-title">Maths Tutor</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-2 col-sm-4 mb-4">
+        <div class="card tutor-card">
+          <img src="Physics_Tutor img.jpg" class="card-img-top" alt="Physics Tutor">
+          <div class="card-body text-center">
+            <h5 class="card-title">Physics Tutor</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-2 col-sm-4 mb-4">
+        <div class="card tutor-card">
+          <img src="science tutor img.jpg" class="card-img-top" alt="Biology Tutor">
+          <div class="card-body text-center">
+            <h5 class="card-title">Biology Tutor</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-2 col-sm-4 mb-4">
+        <div class="card tutor-card">
+          <img src="social tutor img.jpg" class="card-img-top" alt="Social Studies Tutor">
+          <div class="card-body text-center">
+            <h5 class="card-title">Social Studies Tutor</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-2 col-sm-4 mb-4">
+        <div class="card tutor-card">
+          <img src="computer science tutor.jpg" class="card-img-top" alt="Computer Science Tutor">
+          <div class="card-body text-center">
+            <h5 class="card-title">Computer Science Tutor</h5>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section> -->
+
+<br>
+<br>
+
+<h2 class="text-center mb-5">Expert Plumbing Solutions for Every Need</h2>
+
+<!-- Section: Quote & Image (Plumbing) -->
+<section class="quote-section py-5">
+  <div class="container d-flex justify-content-between align-items-center">
+    <!-- Hoverable Container (Text + Image) -->
+    <div class="quote-container d-flex align-items-center w-100">
+      <!-- Text Section (Plumbing Description) -->
+      <div class="quote-text" style="max-width: 50%;">
+        <h2>"Reliable Plumbing Services, When You Need Them."</h2>
+        <p>At Fixture Fit, we provide expert plumbing services for everything from leaky faucets to full installations.
+          Our skilled plumbers are dedicated to delivering fast, high-quality solutions.</p>
+      </div>
+      <!-- Image Section (Plumbing) -->
+      <div class="image-container" style="max-width: 45%;">
+        <img src="plumber.jpg" alt="Plumbing Image" class="img-fluid w-100" style="border-radius: 8px;">
+      </div>
+    </div>
+  </div>
+</section>
+<br>
+<!-- Plumber Page Container -->
+<!-- <section class="subjects-section py-5" style="background-color: #f8f9fa;">
+  <div class="container">
+    <h2 class="text-center mb-5">Our Expert Plumbing Services</h2>
+    <div class="row justify-content-center">
+
+      
+      <div class="col-md-2 col-sm-4 mb-4">
+        <div class="card tutor-card">
+          <img src="pipe-plumber.jpg" class="card-img-top" alt="Replacements of Pipes">
+          <div class="card-body text-center">
+            <h5 class="card-title">Replacements of Pipes</h5>
+          </div>
+        </div>
+      </div>
+
+ 
+      <div class="col-md-2 col-sm-4 mb-4">
+        <div class="card tutor-card">
+          <img src="bathshower-plumber.jpg" class="card-img-top" alt="Shower and Bathtub Repairs">
+          <div class="card-body text-center">
+            <h5 class="card-title">Shower and Bathtub Repairs</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-2 col-sm-4 mb-4">
+        <div class="card tutor-card">
+          <img src="faucet-img.jpg" class="card-img-top" alt="Leaky Faucets and Taps">
+          <div class="card-body text-center">
+            <h5 class="card-title">Leaky Faucets and Taps</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-2 col-sm-4 mb-4">
+        <div class="card tutor-card">
+          <img src="plumber-cloggeddrain.jpg" class="card-img-top" alt="Clogged Drains">
+          <div class="card-body text-center">
+            <h5 class="card-title">Clogged Drains</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-2 col-sm-4 mb-4">
+        <div class="card tutor-card">
+          <img src="plumber-sink.jpg" class="card-img-top" alt="Kitchen Sink Repairs">
+          <div class="card-body text-center">
+            <h5 class="card-title">Kitchen Sink Repairs</h5>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section> -->
+<br>
+<!-- Plumber Page Container -->
+<div class="card01-deck custom-card01">
+  <br>
+  <div class="card01">
+    <h4>Replacements of Pipes</h4>
+    <p class="heading custom-text" style=" background-clip: text;">
+      QuickAccess
+    </p>
+    <a class="custom-icon" routerLink="/plumber" target="_blank">
+      <img src="icons8-arrow-20.png" alt="Arrow" class="icon-link">
+    </a>
+  </div>
+  <br>
+  <div class="card01">
+    <h4>Shower, Bathtub Repairs</h4>
+    <p class="heading custom-text" style=" background-clip: text;">
+      QuickAccess
+    </p>
+    <a class="custom-icon" routerLink="/plumber" target="_blank">
+      <img src="icons8-arrow-20.png" alt="Arrow" class="icon-link">
+    </a>
+  </div><br>
+  <div class="card01">
+    <h4>Leaky Faucets and Taps</h4>
+    <p class="heading custom-text" style=" background-clip: text;">
+      QuickAccess
+    </p>
+    <a class="custom-icon" routerLink="/plumber" target="_blank">
+      <img src="icons8-arrow-20.png" alt="Arrow" class="icon-link">
+    </a>
+  </div><br>
+  <div class="card01">
+    <h4>Clogged Drains</h4>
+    <p class="heading custom-text" style=" background-clip: text;">
+      QuickAccess
+    </p>
+    <a class="custom-icon" routerLink="/plumber" target="_blank">
+      <img src="icons8-arrow-20.png" alt="Arrow" class="icon-link">
+    </a>
+  </div>
+  <br>
+  <div class="card01">
+    <h4>Kitchen Sink Repairs</h4>
+    <p class="heading custom-text" style=" background-clip: text;">
+      QuickAccess
+    </p>
+    <a class="custom-icon" routerLink="/plumber" target="_blank">
+      <img src="icons8-arrow-20.png" alt="Arrow" class="icon-link">
+    </a>
+  </div>
+
+</div>
+<br>
+<br>
+<h2 class="text-center mb-5">Professional Electrical Services You Can Trust</h2>
+<!-- Section: Quote & Image (electrician) -->
+<section class="quote-section py-5">
+  <div class="container d-flex justify-content-between align-items-center">
+    <!-- Hoverable Container (Text + Image) -->
+    <div class="quote-container d-flex align-items-center w-100">
+      <!-- Text Section (Electrician Description) -->
+      <div class="quote-text" style="max-width: 50%;">
+        <h2>"Efficient Electrical Services, Anytime You Need."</h2>
+        <p>At PowerPro, we offer professional electrical services, from wiring repairs to lighting installations. Our
+          licensed electricians are committed to delivering fast, safe, and reliable solutions for your home.</p>
+      </div>
+      <!-- Image Section (Electrician) -->
+      <div class="image-container" style="max-width: 45%;">
+        <img src="elec.JPG" alt="Electrician Services" class="img-fluid w-100" style="border-radius: 8px;">
+      </div>
+    </div>
+  </div>
+</section>
+<br>
+
+<div class="card-deck custom-card2">
+  <br>
+  <div class="card2">
+    <h4>Flickering Lights</h4>
+    <p class="heading custom-text" style=" background-clip: text;">
+      QuickAccess
+    </p>
+    <a class="custom-icon" routerLink="/electrician" target="_blank">
+      <img src="icons8-arrow-20.png" alt="Arrow" class="icon-link">
+    </a>
+  </div>
+  <br>
+  <div class="card2">
+    <h4>Adding Outlets</h4>
+    <p class="heading custom-text" style=" background-clip: text;">
+      QuickAccess
+    </p>
+    <a class="custom-icon" routerLink="/electrician" target="_blank">
+      <img src="icons8-arrow-20.png" alt="Arrow" class="icon-link">
+    </a>
+  </div><br>
+  <div class="card2">
+    <h4>Shocking Outlets</h4>
+    <p class="heading custom-text" style=" background-clip: text;">
+      QuickAccess
+    </p>
+    <a class="custom-icon" routerLink="/electrician" target="_blank">
+      <img src="icons8-arrow-20.png" alt="Arrow" class="icon-link">
+    </a>
+  </div><br>
+  <div class="card2">
+    <h4> Installing a Generator</h4>
+    <p class="heading custom-text" style=" background-clip: text;">
+      QuickAccess
+    </p>
+    <a class="custom-icon" routerLink="/electrician" target="_blank">
+      <img src="icons8-arrow-20.png" alt="Arrow" class="icon-link">
+    </a>
+  </div>
+  <br>
+  <div class="card2">
+    <h4>Tripping Breakers</h4>
+    <p class="heading custom-text" style=" background-clip: text;">
+      QuickAccess
+    </p>
+    <a class="custom-icon" routerLink="/electrician" target="_blank">
+      <img src="icons8-arrow-20.png" alt="Arrow" class="icon-link">
+    </a>
+  </div>
+
+</div>
+<br>
+<br>
+<br>
+
+<!-- Font Awesome CDN -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+<!-- Footer Section -->
+<footer class="py-3 py-md-4 bg-black text-light">
+  <div class="container text-center">
+    <!-- Copyright -->
+    <div class="mb-3">
+      &copy; 2024 QuickAccess. All Rights Reserved.
+    </div>
+
+    <!-- Social Media Icons -->
+    <div class="social-icons mb-3">
+      <a href="#!" class="btn btn-outline-light mx-2">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="#!" class="btn btn-outline-light mx-2">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="#!" class="btn btn-outline-light mx-2">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="#!" class="btn btn-outline-light mx-2">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+
+    <!-- Minimal Links (if necessary) -->
+    <div class="small">
+      <a href="#!" class="text-light text-decoration-none mx-2">Privacy Policy</a> |
+      <a href="#!" class="text-light text-decoration-none mx-2">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+
+<router-outlet></router-outlet>

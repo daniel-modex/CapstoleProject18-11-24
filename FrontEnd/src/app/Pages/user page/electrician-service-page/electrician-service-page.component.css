@@ -1,0 +1,142 @@
+/* Adjust card layout */
+.card {
+  width: 100%; /* Set the card width to 100% of its parent column */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out; /* Add transition for hover effect */
+}
+
+.card:hover {
+  transform: scale(1.05); /* Slightly enlarge the card on hover */
+}
+
+/* Card image size */
+.card-img-top {
+  max-height: 180px;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Card body padding */
+.card-body {
+  padding: 15px;
+}
+
+/* Title style */
+.card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Text (price) styling */
+.card-text {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Button styling */
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #6c63ff;
+  border: none;
+  border-radius: 5px;
+  color: white;
+}
+
+button:hover {
+  background-color: #5a52d4;
+}
+
+/* Star Rating */
+.fas, .far {
+  color: #ffd700;
+  font-size: 18px;
+}
+
+/* Adjust layout for smaller screens */
+@media (max-width: 768px) {
+  .card {
+    margin-bottom: 15px; /* Add space between cards on smaller screens */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Custom Styles */
+body {
+  font-family: 'Arial', sans-serif;
+}
+
+/* Navbar Styling */
+.navbar {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #f8f9fa;
+}
+
+/* Remove the caret from the dropdown toggle */
+.nav-item .dropdown-toggle::after {
+  display: none !important; /* Remove the default caret */
+}
+
+/* Show the dropdown on hover */
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Hide dropdown by default (initially) */
+.nav-item .dropdown-menu {
+  display: none;  /* Hide by default */
+  position: absolute;  /* Needed for proper dropdown positioning */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Optional: Add transition for smooth appearance */
+.nav-item .dropdown-menu {
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+/* Change cursor style for Services link */
+.nav-item.dropdown:hover .nav-link,
+.nav-item.dropdown .nav-link:hover {
+cursor: pointer !important; /* Hand cursor for clickable link */
+}
+
+/* Change cursor style for Profile link */
+.nav-item.dropdown:hover .nav-link,
+.nav-item.dropdown .nav-link:hover {
+cursor: pointer !important; /* Hand cursor for clickable link */
+}
+
+
+
+.book-now-btn {
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.book-now-btn:hover {
+  background-color: #0056b3; /* Darker shade of blue */
+  transform: scale(1.05); /* Slightly enlarge the button */
+}
+.custom-btn{
+  width: 20%;
+  margin-left: 70%;
+  /* margin-bottom: 20%; */
+  height:28%
+}
+.custom1{
+  width:40% !important;
+  margin-left: 5%;
+}

@@ -1,0 +1,51 @@
+/* Custom Styles */
+body {
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Navbar Styling */
+  .navbar {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #f8f9fa;
+  }
+
+/* Remove the caret from the dropdown toggle */
+.nav-item .dropdown-toggle::after {
+    display: none !important; /* Remove the default caret */
+  }
+  
+  /* Show the dropdown on hover */
+  .nav-item.dropdown:hover .dropdown-menu {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  
+  /* Hide dropdown by default (initially) */
+  .nav-item .dropdown-menu {
+    display: none;  /* Hide by default */
+    position: absolute;  /* Needed for proper dropdown positioning */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+  
+  /* Optional: Add transition for smooth appearance */
+  .nav-item .dropdown-menu {
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+/* Change cursor style for Services link */
+.nav-item.dropdown:hover .nav-link,
+.nav-item.dropdown .nav-link:hover {
+  cursor: pointer !important; /* Hand cursor for clickable link */
+}
+
+/* Change cursor style for Profile link */
+.nav-item.dropdown:hover .nav-link,
+.nav-item.dropdown .nav-link:hover {
+  cursor: pointer !important; /* Hand cursor for clickable link */
+}
+
+
+
+

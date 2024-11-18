@@ -1,0 +1,31 @@
+<div class="main">
+	<input type="checkbox" id="chk" aria-hidden="true">
+
+	<div class="signup">
+		<form>
+			<label for="chk" aria-hidden="true"style="color: #573b8a;">Login</label>
+			<input [(ngModel)]="loginObj.userName" type="text" name="username" placeholder="User Name" required="">
+			<input [(ngModel)]="loginObj.password" type="password" name="password" placeholder="Password" required="">
+			<button (click)="onLogin()">Login</button>
+			
+		</form>
+	</div>
+
+	<div class="login">
+		<form>
+			<label for="chk" aria-hidden="true" style="color: #573b8a;" style="margin-bottom: 10px;">Sign up</label>
+			<input [(ngModel)]="registerObj.name" type="text" name="name" placeholder="Name" required>
+			<input [(ngModel)]="registerObj.userName" type="text" name="username" placeholder="User name" required>
+			<input [(ngModel)]="registerObj.email" (ngModelChange)="onEmailChange($event)" type="email" name="email" placeholder="Email" required>
+			<input [(ngModel)]="registerObj.phone" type="text" name="phone" placeholder="Enter" required>
+			<input [(ngModel)]="registerObj.password" (blur)="validatePassword()" type="password" name="password" placeholder="Password" required style="margin-bottom: 2%;">
+			
+			<label for="ischeck" class="custom-text">
+				<input  [(ngModel)]="ischeck" type="checkbox" name="ischeck" required>Are you a service provider
+
+			</label>
+			<button (click)="onRegister()" style="margin-top: 2%;">Sign up</button>
+		</form>
+	</div>
+</div>
+

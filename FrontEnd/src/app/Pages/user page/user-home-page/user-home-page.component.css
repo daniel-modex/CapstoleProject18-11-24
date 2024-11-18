@@ -1,0 +1,818 @@
+/* Custom Styles */
+body {
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Navbar Styling */
+  .navbar {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #f8f9fa;
+  }
+
+/* Remove the caret from the dropdown toggle */
+.nav-item .dropdown-toggle::after {
+    display: none !important; /* Remove the default caret */
+  }
+  
+  /* Show the dropdown on hover */
+  .nav-item.dropdown:hover .dropdown-menu {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  
+  /* Hide dropdown by default (initially) */
+  .nav-item .dropdown-menu {
+    display: none;  /* Hide by default */
+    position: absolute;  /* Needed for proper dropdown positioning */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+  
+  /* Optional: Add transition for smooth appearance */
+  .nav-item .dropdown-menu {
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+/* Change cursor style for Services link */
+.nav-item.dropdown:hover .nav-link,
+.nav-item.dropdown .nav-link:hover {
+  cursor: pointer !important; /* Hand cursor for clickable link */
+}
+
+/* Change cursor style for Profile link */
+.nav-item.dropdown:hover .nav-link,
+.nav-item.dropdown .nav-link:hover {
+  cursor: pointer !important; /* Hand cursor for clickable link */
+}
+
+  
+
+
+
+
+
+  
+  /* Quote Section */
+  .quote-section {
+    background: #e9ecef;
+    text-align: center;
+    padding: 60px 0;
+  }
+  
+  .quote-section .quote-text h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .quote-section .quote-text p {
+    font-size: 1.1rem;
+    color: #666;
+  }
+  
+  /* Images Section */
+  .image-container img {
+    max-width: 100%;
+    border-radius: 8px;
+  }
+  
+  /* Services Section */
+  .services-section {
+    background: #f8f9fa;
+    padding: 60px 0;
+  }
+  
+  .services-section h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .card {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .card-text {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  /* Footer Section */
+  footer {
+    background-color: #343a40;
+  }
+  
+  footer .social-icons a {
+    font-size: 1.5rem;
+    transition: color 0.3s;
+  }
+  
+  
+  
+
+
+
+
+/* Glow effect for the card */
+.card {
+    transition: box-shadow 0.3s ease-in-out; /* Smooth transition */
+  }
+  
+  /* Add glow effect on hover */
+  
+
+  
+
+
+
+
+
+
+
+
+  /* glow effect*/
+.services-section {
+    background: #f8f9fa;
+    width: 100%;
+    padding: 40px 0;
+}
+
+.services-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+/* Glowing Effect for Cards */
+.services-section .card.box {
+    position: relative;
+    background: #060c21;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Scale Effect on Hover */
+.services-section .card.box:hover {
+    transform: scale(1.05);
+}
+
+.services-section .card.box:before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: #fff;
+    z-index: -1;
+}
+
+.services-section .card.box:after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: #fff;
+    z-index: -2;
+    filter: blur(40px);
+}
+
+/* Gradient Glow for each card */
+.services-section .card.box:nth-child(1):before,
+.services-section .card.box:nth-child(1):after {
+    background: linear-gradient(235deg, #89ff00, #010615, #00bcd4);
+}
+
+.services-section .card.box:nth-child(2):before,
+.services-section .card.box:nth-child(2):after {
+    background: linear-gradient(235deg, #ff005e, #010615, #fbff00);
+}
+
+.services-section .card.box:nth-child(3):before,
+.services-section .card.box:nth-child(3):after {
+    background: linear-gradient(235deg, #772aff, #010615, #2196f3);
+}
+
+/* Content Inside the Card */
+.services-section .card .content {
+    position: relative;
+    padding: 20px;
+    color: #fff;
+    z-index: 1;
+    text-align: center;
+}
+
+.services-section .card .content h5 {
+    margin-bottom: 10px;
+    font-size: 1.25rem;
+}
+
+.services-section .card .content p {
+    font-size: 0.9rem;
+    color: #bbb;
+    margin-bottom: 20px;
+}
+
+.services-section .card .content .btn {
+    padding: 10px 15px;
+    border-radius: 5px;
+    background: #fff;
+    color: #333;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+/* Quote & Image (Tutoring)  */
+.quote-section {
+    background-color: #FFFAF0; /* Warm background (light cream) */
+    padding: 30px 0; /* Reduced the padding to make the section shorter */
+}
+
+.quote-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    transition: all 0.3s ease; /* Smooth transition (remains for smoothness, but no hover color change) */
+}
+
+/* Text Section */
+.quote-section .quote-text h2 {
+    font-size: 1.75rem; /* Slightly smaller font size for the heading */
+    font-weight: bold;
+    color: #333; /* Dark text color for the heading */
+    margin-bottom: 15px; /* Reduced the bottom margin */
+    line-height: 1.3;
+}
+
+.quote-section .quote-text p {
+    font-size: 0.95rem; /* Slightly smaller font size for the paragraph */
+    color: #6c757d; /* Grey text for paragraph */
+    line-height: 1.5;
+    margin-bottom: 8px; /* Reduced margin */
+}
+
+/* Image Section */
+.quote-section .image-container {
+    max-width: 45%;
+    padding-left: 20px; /* Adds space between the image and the text box */
+    padding-right: 20px; /* Adds space on the right side of the image */
+}
+
+.quote-section .image-container img {
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Added subtle shadow to the image */
+    width: 100%; /* Ensures the image fills the container */
+    height: auto; /* Maintain the image aspect ratio */
+}
+
+/* Removed hover effect color change */
+.quote-container:hover {
+    transform: scale(1.05); /* Slight zoom effect for emphasis */
+    border-radius: 8px; /* Round the edges */
+}
+
+/* Text color change on hover (removed) */
+.quote-container:hover .quote-text h2,
+.quote-container:hover .quote-text p {
+    color: inherit; /* No color change on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .quote-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .quote-section .quote-text {
+        max-width: 100%;
+        padding-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .quote-section .image-container {
+        max-width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+
+
+
+
+
+/* General Styling for 5 tutor cards */
+/* General Styling for 5 tutor cards */
+.tutor-card {
+    width: 100%; /* Ensure the card takes up the full width available */
+    max-width: 180px; /* Adjust to a reasonable size for fitting in one row */
+    height: 250px; /* Fixed height to ensure consistency */
+    margin: 0 15px; /* Space between cards */
+    box-shadow: none; /* Remove any shadow effect by default */
+    background-color: #fff !important; /* Explicitly set the background color to white */
+    border: 1px solid #ddd; /* Light border to differentiate the cards */
+    border-radius: 8px; /* Rounded corners for a clean look */
+    display: flex; /* Flexbox to allow for better layout */
+    flex-direction: column; /* Stack the image and body vertically */
+    overflow: hidden; /* Prevent content overflow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth scaling and shadow transition */
+}
+
+/* Make images inside the cards uniform in size */
+.tutor-card .card-img-top {
+    height: 150px; /* Set a fixed height for images */
+    object-fit: cover; /* Ensure images cover the space without distortion */
+    width: 100%; /* Make the images fill the width of the card */
+}
+
+/* Card body styling */
+.tutor-card .card-body {
+    flex-grow: 1; /* Allow the content area to expand */
+    padding: 10px; /* Reduce padding to make the card compact */
+    display: flex; /* Flexbox to align title and content */
+    flex-direction: column; /* Stack title and content vertically */
+    justify-content: center; /* Center the content vertically */
+}
+
+/* Styling the card titles */
+.tutor-card .card-title {
+    font-size: 1rem; /* Smaller text size for the title */
+    font-weight: normal; /* Lighter weight */
+    text-align: center; /* Center-align the text */
+    margin-top: 10px; /* Space above the title */
+    margin-bottom: 10px; /* Space below the title */
+}
+
+/* Hover Effect for Cards */
+.tutor-card:hover {
+    transform: scale(1.05); /* Slightly scale the card on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+}
+
+/* Ensure cards are responsive */
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Responsive adjustment for smaller screens */
+@media (max-width: 768px) {
+    .tutor-card {
+        max-width: 160px; /* Slightly smaller cards for mobile */
+        height: 230px; /* Slightly reduce height */
+    }
+
+    .tutor-card .card-img-top {
+        height: 130px; /* Reduce image size for mobile */
+    }
+}
+
+
+
+
+
+
+
+/* for electrician */
+/* 
+*
+*
+*/ 
+
+.custom-card2 {
+  display: flex;
+  flex-wrap: wrap;                  /* Allow cards to wrap into rows */
+  gap: 20px;                        /* Space between cards */
+  justify-content: space-between;   /* Distribute cards evenly with space between them */
+  padding: 20px;
+}
+
+.card2 {
+  width: 190px;                     /* Fixed width for the card */
+  height: 204px;                    /* Fixed height for the card */
+  position: relative;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 12px;
+  gap: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  /* Remove flex-grow and flex-shrink to keep size fixed */
+}
+
+.card2::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  left: -5px;
+  margin: auto;
+  width: 200px;                     /* Fixed width of the gradient */
+  height: 214px;                    /* Fixed height of the gradient */
+  border-radius: 10px;
+  background: linear-gradient(-45deg, #CCA483 0%, #FAEAD0 100%);
+  z-index: -10;
+  pointer-events: none;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card2::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(-45deg, #7E4F3B 0%, #FAEAD0 100%);
+  transform: translate3d(0, 0, 0) scale(0.95);
+  filter: blur(20px);
+}
+
+.heading {
+  font-size: 20px;
+  text-transform: capitalize;
+  font-weight: 700;
+}
+
+.card2 p:not(.heading) {
+  font-size: 14px;
+}
+
+.card2 p:last-child {
+  color: #7E4F3B;
+  font-weight: 600;
+}
+
+.card2:hover::after {
+  filter: blur(30px);
+}
+
+.card2:hover::before {
+  transform: rotate(-90deg) scaleX(1.1) scaleY(0.94);
+}
+
+/* Font styling for the custom text */
+.custom-text {
+  -webkit-text-fill-color: transparent;
+  font-size: 14px;
+  background: linear-gradient(to right, #7E4F3B, #ffffff, #7E4F3B);
+  animation: textanimeation 5s infinite linear;
+  background-size: 200%;
+}
+
+@keyframes textanimeation {
+  to {
+    background-position: 200%;
+  }
+}
+
+@media (max-width: 768px) {
+  .custom-card2 {
+    justify-content: space-around; /* Adjust alignment on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .custom-card2 {
+    flex-direction: column; /* Stack cards vertically on smaller screens */
+    align-items: center;
+  }
+}
+
+
+
+/* for plumber */
+/* 
+*
+*
+*/ 
+
+.custom-card3 {
+  display: flex;
+  flex-wrap: wrap;                  /* Allow cards to wrap into rows */
+  gap: 20px;                        /* Space between cards */
+  justify-content: space-between;   /* Distribute cards evenly with space between them */
+  padding: 20px;
+}
+
+.card3 {
+  width: 190px;                     /* Fixed width for the card */
+  height: 204px;                    /* Fixed height for the card */
+  position: relative;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 12px;
+  gap: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  /* Remove flex-grow and flex-shrink to keep size fixed */
+}
+
+.card3::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  left: -5px;
+  margin: auto;
+  width: 200px;                     /* Fixed width of the gradient */
+  height: 214px;                    /* Fixed height of the gradient */
+  border-radius: 10px;
+  background: linear-gradient(-45deg, #CCA483 0%, #FAEAD0 100%);
+  z-index: -10;
+  pointer-events: none;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card3::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(-45deg, #7E4F3B 0%, #FAEAD0 100%);
+  transform: translate3d(0, 0, 0) scale(0.95);
+  filter: blur(20px);
+}
+
+.heading {
+  font-size: 20px;
+  text-transform: capitalize;
+  font-weight: 700;
+}
+
+.card3 p:not(.heading) {
+  font-size: 14px;
+}
+
+.card p:last-child {
+  color: #7E4F3B;
+  font-weight: 600;
+}
+
+.card3:hover::after {
+  filter: blur(30px);
+}
+
+.card3:hover::before {
+  transform: rotate(-90deg) scaleX(1.1) scaleY(0.94);
+}
+
+/* Font styling for the custom text */
+.custom-text {
+  -webkit-text-fill-color: transparent;
+  font-size: 14px;
+  background: linear-gradient(to right, #7E4F3B, #ffffff, #7E4F3B);
+  animation: textanimeation 5s infinite linear;
+  background-size: 200%;
+}
+
+@keyframes textanimeation {
+  to {
+    background-position: 200%;
+  }
+}
+
+@media (max-width: 768px) {
+  .custom-card3 {
+    justify-content: space-around; /* Adjust alignment on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .custom-card3 {
+    flex-direction: column; /* Stack cards vertically on smaller screens */
+    align-items: center;
+  }
+}
+
+
+/* for plumber */
+/* 
+*
+*
+*/ 
+
+.custom-card01 {
+  display: flex;
+  flex-wrap: wrap;                  /* Allow cards to wrap into rows */
+  gap: 20px;                        /* Space between cards */
+  justify-content: space-between;   /* Distribute cards evenly with space between them */
+  padding: 20px;
+}
+
+.card01 {
+  width: 190px;                     /* Fixed width for the card */
+  height: 204px;                    /* Fixed height for the card */
+  position: relative;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 12px;
+  gap: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  /* Remove flex-grow and flex-shrink to keep size fixed */
+}
+
+.card01::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  left: -5px;
+  margin: auto;
+  width: 200px;                     /* Fixed width of the gradient */
+  height: 214px;                    /* Fixed height of the gradient */
+  border-radius: 10px;
+  background: linear-gradient(-45deg, #CCA483 0%, #FAEAD0 100%);
+  z-index: -10;
+  pointer-events: none;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card01::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(-45deg, #7E4F3B 0%, #FAEAD0 100%);
+  transform: translate3d(0, 0, 0) scale(0.95);
+  filter: blur(20px);
+}
+
+.heading {
+  font-size: 20px;
+  text-transform: capitalize;
+  font-weight: 700;
+}
+
+.card01 p:not(.heading) {
+  font-size: 14px;
+}
+
+.card01 p:last-child {
+  color: #7E4F3B;
+  font-weight: 600;
+}
+
+.card01:hover::after {
+  filter: blur(30px);
+}
+
+.card01:hover::before {
+  transform: rotate(-90deg) scaleX(1.1) scaleY(0.94);
+}
+
+/* Font styling for the custom text */
+.custom-text {
+  -webkit-text-fill-color: transparent;
+  font-size: 14px;
+  background: linear-gradient(to right, #7E4F3B, #ffffff, #7E4F3B);
+  animation: textanimeation 5s infinite linear;
+  background-size: 200%;
+}
+
+@keyframes textanimeation {
+  to {
+    background-position: 200%;
+  }
+}
+
+@media (max-width: 768px) {
+  .custom-card01 {
+    justify-content: space-around; /* Adjust alignment on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .custom-card01 {
+    flex-direction: column; /* Stack cards vertically on smaller screens */
+    align-items: center;
+  }
+}
+
+
+
+
+/* icon css (top catageory) */
+/* Style for the custom-icon anchor tag */
+.custom-icon {
+  display: inline-flex; /* Align the icon inline with the text */
+  align-items: center;  /* Vertically center the image */
+  cursor: pointer;      /* Make the icon clickable */
+  transition: transform 0.3s ease; /* Smooth transition for hover effect */
+  margin-left: auto; /* Push the icon to the far right of the container */
+}
+
+/* Style for the image inside the link */
+.icon-link {
+  width: 20px; /* Set the size of the icon */
+  height: 20px; 
+  transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for the icon */
+.custom-icon:hover .icon-link {
+  transform: scale(1.2); /* Enlarge the icon on hover */
+}
+
+/* Make sure the parent text element takes full width for the icon to align right */
+.heading {
+  display: flex;
+  align-items: center; /* Align items vertically in the center */
+  justify-content: space-between; /* Spread out elements */
+}
+
+
+
+
+/* Custom Styles */
+body {
+  font-family: 'Arial', sans-serif;
+}
+
+/* Navbar Styling */
+.navbar {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #f8f9fa;
+}
+
+/* Remove the caret from the dropdown toggle */
+.nav-item .dropdown-toggle::after {
+  display: none !important; /* Remove the default caret */
+}
+
+/* Show the dropdown on hover */
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Hide dropdown by default (initially) */
+.nav-item .dropdown-menu {
+  display: none;  /* Hide by default */
+  position: absolute;  /* Needed for proper dropdown positioning */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Optional: Add transition for smooth appearance */
+.nav-item .dropdown-menu {
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+/* Change cursor style for Services link */
+.nav-item.dropdown:hover .nav-link,
+.nav-item.dropdown .nav-link:hover {
+cursor: pointer !important; /* Hand cursor for clickable link */
+}
+
+/* Change cursor style for Profile link */
+.nav-item.dropdown:hover .nav-link,
+.nav-item.dropdown .nav-link:hover {
+cursor: pointer !important; /* Hand cursor for clickable link */
+}
+
+
+
+
+
+
+
+
+
+
+
+

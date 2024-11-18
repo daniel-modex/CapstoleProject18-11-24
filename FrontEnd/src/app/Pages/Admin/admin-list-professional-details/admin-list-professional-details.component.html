@@ -1,0 +1,37 @@
+
+<div class="glow-text">
+    <h2 class="display-5 text-center" style="font-family: 'Times New Roman', Times, serif;">Professional List</h2>
+    </div>
+    <div class="container  mt-4">
+    
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <table class="table table-bordered text-center table-striped custom-shadow">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Domain</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (item of ProfessionalList; track $index) 
+                        {
+                            <tr>
+                                <td>{{item.id}}</td>
+                                <td>{{item.name}}</td>
+                                <td>{{item.domain}}</td>
+                                <td>{{item.email}}</td>
+                                <td><button type="button" class="btn btn-danger btn-block" (click)="onDelete(item.id)">Delete</button></td>
+                                <td><button type="button" class="btn btn-warning btn-block" (click)="onShow(item.id)">Show Details</button></td>
+
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- <router-outlet /> -->
+    

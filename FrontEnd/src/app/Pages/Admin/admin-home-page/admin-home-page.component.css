@@ -1,0 +1,50 @@
+/* Sidebar style */
+.sidenav {
+  position: fixed; /* Fix the sidebar to the left of the page */
+  top: 70px; /* Adjust to move the sidebar below the navbar */
+  left: 0;
+  height: 100%; /* Ensure it takes up the full height of the screen */
+  width: 250px;
+  background-color: #343a40; /* Dark background for the sidebar */
+  padding-top: 20px;
+  transition: 0.3s;
+  z-index: 1050; /* Make sure the sidebar stays above content */
+  overflow-y: auto; /* Allow the sidebar to scroll if its content overflows */
+}
+
+.sidenav ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.sidenav a {
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #fff;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  background-color: #575757;
+}
+
+/* Content area */
+.content {
+  margin-left: 250px; /* Ensure the content is not overlapped by the sidebar */
+  padding: 16px;
+  height: 100%; /* Ensure the content takes full height */
+}
+
+/* Responsive design */
+@media screen and (max-width: 700px) {
+  .sidenav {
+    width: 100%;
+    height: auto;
+  }
+
+  .content {
+    margin-left: 0;
+  }
+}
