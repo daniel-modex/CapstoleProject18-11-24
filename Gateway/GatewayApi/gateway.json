@@ -40,7 +40,8 @@
     {
       "UpstreamPathTemplate": "/gateway/users/{id}",
       "UpstreamHttpMethod": [
-        "Get","Delete"
+        "Get",
+        "Delete"
       ],
       "DownstreamPathTemplate": "/api/UserApi/{id}",
       "DownstreamScheme": "https",
@@ -48,6 +49,40 @@
         {
           "Host": "localhost",
           "Port": 5002
+        }
+      ],
+      "FileCacheOptions": {
+        "TtlSeconds": 10
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/notification",
+      "UpstreamHttpMethod": [
+        "Post"
+      ],
+      "DownstreamPathTemplate": "/api/novu/send-welcome-email",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5007
+        }
+      ],
+      "FileCacheOptions": {
+        "TtlSeconds": 10
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/notification/otp",
+      "UpstreamHttpMethod": [
+        "Post"
+      ],
+      "DownstreamPathTemplate": "/api/novu/send-otp",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5007
         }
       ],
       "FileCacheOptions": {

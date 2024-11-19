@@ -16,7 +16,7 @@ namespace authApiNew
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-            var jwtsettings = new JwtOptions();
+            //var jwtsettings = new JwtOptions();
 
             // Add services to the container.
 
@@ -25,8 +25,26 @@ namespace authApiNew
             builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<AuthApiContext>().AddDefaultTokenProviders();
             builder.Services.AddTransient<IRegisterService, RegisterService>();
             builder.Services.AddTransient<ITokenGenerator,TokenGenerator>();
-            builder.Services.Configure<JwtOptions>(builder.Configuration.GetSection("ApiSettings:JwtOptions"));
-            builder.Configuration.GetSection("ApiSettings:JwtOptions").Bind(jwtsettings);
+            var jwtOptions = new JwtOptions
+            {
+                Secret = Environment.GetEnvironmentVariable("JWT_SECRET"),
+                Issuer = Environment.GetEnvironmentVariable("JWT_ISSUER"),
+                Audience = Environment.GetEnvironmentVariable("JWT_AUDIENCE")
+            };
+            if (string.IsNullOrWhiteSpace(jwtOptions.Secret) ||
+            string.IsNullOrWhiteSpace(jwtOptions.Issuer) ||
+            string.IsNullOrWhiteSpace(jwtOptions.Audience))
+            {
+                throw new ArgumentException("JWT settings are not properly configured in the environment variables.");
+            }
+            //builder.Services.Configure<JwtOptions>(builder.Configuration.GetSection("ApiSettings:JwtOptions"));
+            //builder.Configuration.GetSection("ApiSettings:JwtOptions").Bind(jwtsettings);
+            builder.Services.Configure<JwtOptions>(opts =>
+            {
+                opts.Secret = jwtOptions.Secret;
+                opts.Issuer = jwtOptions.Issuer;
+                opts.Audience = jwtOptions.Audience;
+            });
 
             builder.Services.AddAuthentication(options =>
 
@@ -52,11 +70,11 @@ namespace authApiNew
 
                     ValidateIssuerSigningKey = true,
 
-                    ValidIssuer = jwtsettings.Issuer,
+                    ValidIssuer = jwtOptions.Issuer,
 
-                    ValidAudience = jwtsettings.Audience,
+                    ValidAudience = jwtOptions.Audience,
 
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(jwtsettings.Secret))
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(jwtOptions.Secret))
 
                 };
 

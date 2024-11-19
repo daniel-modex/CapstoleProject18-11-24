@@ -24,6 +24,7 @@ namespace authApiNew.Services
                 new Claim(JwtRegisteredClaimNames.Name,applicationUser.UserName),
                 new Claim(JwtRegisteredClaimNames.Sub,applicationUser.Id),
                 new Claim(JwtRegisteredClaimNames.Email,applicationUser.Email),
+                new Claim(ClaimTypes.Role,applicationUser.Role),
             };
             var tokenDescriptor = new SecurityTokenDescriptor()
             {
