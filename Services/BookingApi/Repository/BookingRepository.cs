@@ -15,9 +15,9 @@ namespace BookingApi.Repository
             _dbContext = dbContext;
         }
 
-        public async Task<BookingDetails> CancelBooking(BookingDetails cancelBooking)
+        public async Task<BookingDetails> CancelBooking(BookingResponse response)
         {
-            var details = await _dbContext.BookingDetails.FindAsync(cancelBooking.Id);
+            var details = await _dbContext.BookingDetails.FindAsync(response.BookingId);
             if (details == null)
             {
                 return new BookingDetails();

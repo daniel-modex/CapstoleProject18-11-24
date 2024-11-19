@@ -89,8 +89,8 @@ namespace BookingApi.Controllers
             return Ok(response);
         }
 
-        [HttpDelete]
-        public async Task<ActionResult<ResponseDTO>> CancelBooking(BookingDetails booking)
+        [HttpPut("CancelBooking")]
+        public async Task<ActionResult<ResponseDTO>> CancelBooking(BookingResponse booking)
         {
             var response = new ResponseDTO()
             {
