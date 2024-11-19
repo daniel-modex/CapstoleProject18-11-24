@@ -19,7 +19,7 @@ namespace authApiNew.Controllers
             _logger = logger;
         }
 
-        [Authorize]
+        [Authorize(Roles = "user,provider")]
         [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
         {

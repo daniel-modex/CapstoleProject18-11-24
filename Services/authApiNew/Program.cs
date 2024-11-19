@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Internal;
 using Microsoft.IdentityModel.Tokens;
+using System.Security.Claims;
 using System.Text;
 
 namespace authApiNew
@@ -73,6 +74,8 @@ namespace authApiNew
                     ValidIssuer = jwtOptions.Issuer,
 
                     ValidAudience = jwtOptions.Audience,
+
+                    RoleClaimType = ClaimTypes.Role,
 
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(jwtOptions.Secret))
 
