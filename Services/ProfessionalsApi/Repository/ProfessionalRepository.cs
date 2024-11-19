@@ -113,6 +113,7 @@ namespace ProfessionalsApi.Repository
             {
                 return new Professionals();
             }
+            pro.Name = updateProfile.name;
             pro.Domain = updateProfile.Domain;
             pro.City = updateProfile.City;
             pro.Address = updateProfile.Address;

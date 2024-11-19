@@ -4,11 +4,45 @@
   },
   "Routes": [
     {
-      "UpstreamPathTemplate": "/gateway/users",
+      "UpstreamPathTemplate": "/gateway/users/ByUserName/{userName}",
       "UpstreamHttpMethod": [
         "Get"
       ],
+      "DownstreamPathTemplate": "/api/UserApi/ByUserName/{userName}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5002
+        }
+      ],
+      "FileCacheOptions": {
+        "TtlSeconds": 10
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/users",
+      "UpstreamHttpMethod": [
+        "Post","Put","Get"
+      ],
       "DownstreamPathTemplate": "/api/UserApi",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5002
+        }
+      ],
+      "FileCacheOptions": {
+        "TtlSeconds": 10
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/users/{id}",
+      "UpstreamHttpMethod": [
+        "Get","Delete"
+      ],
+      "DownstreamPathTemplate": "/api/UserApi/{id}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {

@@ -128,7 +128,7 @@ namespace UserApi.Repository
                 {
                     return new User();
                 }
-
+                user.Name = updatedUser.Name;
                 user.Address = updatedUser.Address;
                 user.Gender = updatedUser.Gender;
                 user.ProfilePic = updatedUser.ProfilePic;
