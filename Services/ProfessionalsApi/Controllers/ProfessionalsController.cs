@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CommonLibrary;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -24,6 +25,7 @@ namespace ProfessionalsApi.Controllers
         }
 
         // GET: api/Professionals
+        [Authorize(Roles ="admin")]
         [HttpGet("GetAllProfessionals")]
         public async Task<ActionResult<ResponseDTO>> GetProfessionals()
         {
@@ -37,6 +39,7 @@ namespace ProfessionalsApi.Controllers
         }
 
         // GET: api/Professionals/5
+        [Authorize]
         [HttpGet("GetProfessional/{id}")]
         public async Task<ActionResult<ResponseDTO>> GetProfessionals(int id)
         {
@@ -56,6 +59,7 @@ namespace ProfessionalsApi.Controllers
             return Ok(response);
         }
 
+        [Authorize]
         [HttpGet("GetProfessionalByUserName/{userName}")]
         public async Task<ActionResult<ResponseDTO>> GetProfessionalsByUserName(string userName)
         {
@@ -75,6 +79,7 @@ namespace ProfessionalsApi.Controllers
             return Ok(response);
         }
 
+        [Authorize]
         [HttpGet("GetProfessionalsByDomain/{domain}")]
         public async Task<ActionResult<ResponseDTO>> GetProfessionalsByDomain(string domain)
         {
@@ -96,6 +101,7 @@ namespace ProfessionalsApi.Controllers
 
         // PUT: api/Professionals/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [Authorize]
         [HttpPut("updateProfile/{id}")]
         public async Task<ActionResult<ResponseDTO>> PutProfessionals(int id, UpdateProfile updateProfile)
         {
@@ -110,6 +116,7 @@ namespace ProfessionalsApi.Controllers
 
         // POST: api/Professionals
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        
         [HttpPost("Register")]
         public async Task<ActionResult<ResponseDTO>> PostProfessionals(RegistrationRequestDTO registrationRequest)
         {
@@ -123,6 +130,7 @@ namespace ProfessionalsApi.Controllers
         }
 
         // DELETE: api/Professionals/5
+        [Authorize]
         [HttpDelete("{id}")]
         public async Task<ActionResult<ResponseDTO>> DeleteProfessionals(int id)
         {
@@ -136,7 +144,7 @@ namespace ProfessionalsApi.Controllers
         }
 
 
-
+        [Authorize(Roles ="admin")]
         [HttpPut("ConfirmService")]
         public async Task<ActionResult<ResponseDTO>> ConfirmService(ConfirmService confirm)
         {
@@ -149,6 +157,7 @@ namespace ProfessionalsApi.Controllers
             return Ok(response);
         }
 
+        [Authorize(Roles ="provider")]
         [HttpPut("StatusChange")]
         public async Task<ActionResult<ResponseDTO>> StatusChange([FromQuery]int id, [FromBody]bool status)
         {

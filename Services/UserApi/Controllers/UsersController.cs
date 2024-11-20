@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CommonLibrary;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -25,6 +26,7 @@ namespace UserApi.Controllers
         }
 
         // GET: api/Users
+        [Authorize(Roles ="admin")]
         [HttpGet]
         public async Task<ActionResult<ResponseDTO>> GetUsers()
         {
@@ -38,6 +40,7 @@ namespace UserApi.Controllers
         }
 
         // GET: api/Users/5
+        [Authorize]
         [HttpGet("{id}")]
         public async Task<ActionResult<ResponseDTO>> GetUser(int id)
         {
@@ -51,6 +54,7 @@ namespace UserApi.Controllers
             return Ok(response);
         }
 
+        [Authorize]
         [HttpGet("ByUserName/{userName}")]
         public async Task<ActionResult<ResponseDTO>> GetUserByUserName(string userName)
         {
@@ -66,6 +70,7 @@ namespace UserApi.Controllers
 
         // PUT: api/Users/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [Authorize]
         [HttpPut]
         public async Task<ActionResult<ResponseDTO>> PutUser(User user)
         {
@@ -80,6 +85,7 @@ namespace UserApi.Controllers
 
         // POST: api/Users
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        
         [HttpPost]
         public async Task<ActionResult<ResponseDTO>> PostUser(RegistrationRequestDTO registrationRequestDTO)
         {
@@ -93,6 +99,7 @@ namespace UserApi.Controllers
         }
 
         // DELETE: api/Users/5
+        [Authorize]
         [HttpDelete("{id}")]
         public async Task<ActionResult<ResponseDTO>> DeleteUser(int id)
         {
