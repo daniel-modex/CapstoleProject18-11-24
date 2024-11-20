@@ -50,6 +50,7 @@ namespace BookingApi.Repository
         public async Task<BookingDetails> PostBooking(BookingDetails newBookingDetails)
         {
             newBookingDetails.BookingRequestedSuccessfully = true;
+            newBookingDetails.CreatedAt = DateTime.UtcNow;
             _dbContext.BookingDetails.Add(newBookingDetails);
             await _dbContext.SaveChangesAsync();
             return newBookingDetails;
