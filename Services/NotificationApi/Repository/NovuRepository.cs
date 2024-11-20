@@ -21,12 +21,11 @@ namespace NotificationApi.Repository
             _httpClient = httpClient;
         }
 
-        // Method to trigger an event in Novu (sending a welcome email)
         public async Task<HttpContent> TriggerEventAsync(Details details)
         {
             var payload = new
             {
-                name = "welcome-onboarding-email", // Event name
+                name = "welcome-onboarding-email", 
                 to = new
                 {
                     subscriberId = details.id,
@@ -40,7 +39,6 @@ namespace NotificationApi.Repository
                 bridgeUrl = "https://5adb7dd7-e385-4f22-be5f-a1cfeea75a72.novu.sh/api/novu"
             };
 
-            // Create HTTP request message
             var requestMessage = new HttpRequestMessage(HttpMethod.Post, NovuApiUrl)
             {
                 Headers = { { "Authorization", $"ApiKey {NovuApiKey}" } },
@@ -52,13 +50,11 @@ namespace NotificationApi.Repository
 
             if (response.IsSuccessStatusCode)
             {
-                // Successfully triggered the event
                 //Console.WriteLine("Event triggered successfully.");
                 return response.Content;
             }
             else
             {
-                // Handle failure
                 Console.WriteLine($"Failed to trigger event: {response.ReasonPhrase}");
                 return response.Content;
             }
