@@ -1,6 +1,7 @@
 ﻿using BookingApi.Repository;
 using BookingApi.Repository.IRepository;
 using CommonLibrary;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -29,6 +30,7 @@ namespace BookingApi.Controllers
             return Ok(response);
         }
 
+        [Authorize(Roles ="admin")]
         [HttpGet("ServiceSummary/{sname}")]
         public async Task<ActionResult<ResponseDTO>> GetServiceSummary(string sname)
         {
