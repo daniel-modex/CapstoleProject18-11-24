@@ -65,6 +65,8 @@ namespace BookingApi.Repository
             {
                 details.PaymetSuccessful = true;
                 details.IsCompleted = true;
+                details.BookingStatus = "Booking Successfully Completed";
+                await _dbContext.SaveChangesAsync();
                 return details;
             }
             return details;
